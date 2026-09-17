@@ -5,9 +5,8 @@ interactive, web-embeddable **Google Looker Studio** dashboards. Data cleaning i
 **AI-assisted** (Google Apps Script + Gemini) with human review, and every published figure is
 cross-checked against the source report.
 
-> Delivered during an industry project for a New Zealand youth-research organisation (client name
-> withheld for confidentiality). All data shown here is illustrative/anonymised; no personal or
-> client data is included.
+An industry project delivered as part of a data analyst internship: converting youth-survey data
+and insight reports into interactive, reusable dashboards.
 
 ---
 
@@ -79,13 +78,30 @@ repeatable task rather than a rebuild.
 
 ---
 
-## Selected outcomes (illustrative)
+## Outcomes
 
 - Multiple surveys converted into interactive dashboards using the same reusable pipeline.
 - Participation, gender and ethnicity figures matched the source reports on cross-check.
 - Fully anonymised, privacy-safe presentation of youth voices.
+- Adding a new survey became a short, repeatable task instead of a full rebuild.
 
-*(Exact figures and the live dashboard are omitted here for confidentiality.)*
+---
+
+## Code highlights
+
+A **generic, sanitised sample** of the cleaning logic is included here:
+[`sample_cleaning_automation.gs`](./sample_cleaning_automation.gs) .
+
+It demonstrates:
+
+- `cleanGender()` - normalises messy free-text gender into Female / Male / Other using
+  whole-word matching (handles "she/her", "I'm a boy", typos), with Female checked before Male.
+- `classifyEthnicity()` - maps a single ethnicity term to a standard category.
+- `ethnicityGroups()` - treats ethnicity as **multi-select** (a person can appear in several
+  groups), with a human-reviewed mapping overriding the rules.
+- `suggestMappings()` - the **AI-proposes / human-reviews** pattern (AI drafts category
+  mappings; a person approves them before they are applied).
+- `ageGroup()` - derives consistent age bands from age.
 
 ---
 
@@ -97,11 +113,3 @@ repeatable task rather than a rebuild.
 - Data accuracy / validation against a source of truth
 - Data ethics & privacy (anonymisation, minimum group sizes, no PII)
 - Stakeholder communication and repeatable documentation
-
----
-
-## Notes on confidentiality
-
-This case study describes the **approach, tooling and my contribution** only. It intentionally
-excludes the client's name, the live dashboard, real figures, participant quotes, and any personal
-data. Screenshots (if added) use mock or redacted content.
