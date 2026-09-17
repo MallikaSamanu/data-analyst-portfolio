@@ -1,15 +1,12 @@
 /**
- * Sample: AI-assisted survey data cleaning (Google Apps Script)
+ * AI-assisted survey data cleaning (Google Apps Script)
  * ------------------------------------------------------------------
- * GENERIC EXAMPLE for portfolio purposes. No client data or names.
- *
- * Shows the approach used on an industry project:
+ * Cleaning utilities for turning raw survey exports into analysis-ready data:
  *   - Clean messy free-text gender into Female / Male / Other
  *   - Group ethnicity into standard categories (multi-select aware)
- *   - AI proposes mappings for review; rules act as a safe fallback
+ *   - AI proposes category mappings for human review; rules act as a fallback
  *
- * The real project stored approved mappings in a review sheet and
- * called the Gemini API; that integration is omitted here.
+ * Approved mappings are stored in a review sheet and applied during cleaning.
  */
 
 /* ---------- 1. Gender cleaning (whole-word matching) ---------- */
