@@ -113,3 +113,94 @@ It demonstrates:
 - Data accuracy / validation against a source of truth
 - Data ethics & privacy (anonymisation, minimum group sizes, no PII)
 - Stakeholder communication and repeatable documentation
+
+
+# Machine Learning Projects (Microsoft Fabric + Python)
+
+Two end-to-end machine learning projects built in **Microsoft Fabric notebooks** using **Python, pandas, and scikit-learn**, with experiment tracking in **MLflow** and data loaded from **Azure Blob Storage / OneLake**. Both follow the full workflow: load data, clean it, explore it (EDA), build and compare models, and evaluate the results.
+
+> These are case studies built on public training datasets. The focus is the analytics method and modelling workflow. Full notebooks are kept private; this page summarises the approach, decisions, and results.
+
+---
+
+## Project 1 — Bank Customer Churn Prediction (Classification)
+
+**Goal:** Predict which bank customers are likely to leave (churn), so the business can act early to retain them.
+
+### Problem
+Customer churn directly affects revenue. The bank wanted a way to flag customers at risk of leaving, using the data it already holds (credit score, balance, tenure, products, activity, and more), so retention effort could be focused where it matters.
+
+### What I did
+1. **Loaded the data** from Azure Blob Storage into a pandas DataFrame inside a Microsoft Fabric notebook.
+2. **Exploratory Data Analysis (EDA)** — checked data types, missing values, and the balance of churned vs retained customers; explored how features like age, balance, and activity related to churn.
+3. **Prepared the data** — encoded categorical fields (country, gender), scaled numeric features, and split into training and test sets.
+4. **Built and compared models:**
+   - Logistic Regression (baseline)
+   - Random Forest (100 estimators)
+   - Tuned Random Forest (150 and 300 estimators)
+5. **Evaluated** each model with accuracy and a comparison of predicted vs actual churn, and tracked every run in MLflow.
+
+### Outcome
+- Compared several models side by side and identified the Random Forest as the stronger performer over the logistic baseline.
+- Produced a clear predicted-vs-actual churn comparison the business could act on.
+- All experiments logged in MLflow for repeatability.
+
+### Tools
+Microsoft Fabric · Python · pandas · scikit-learn · MLflow · Azure Blob Storage
+
+### Skills demonstrated
+- Classification modelling and model comparison
+- Feature encoding, scaling, and train/test splitting
+- Model evaluation (accuracy, confusion of predicted vs actual)
+- Experiment tracking with MLflow
+- Working with cloud data in Microsoft Fabric
+
+---
+
+## Project 2 — Uber Trip Price Prediction (Regression)
+
+**Goal:** Predict the price of an Uber trip from trip and condition features.
+
+### Problem
+Trip price depends on several factors — distance, duration, time of day, traffic, and weather. The task was to model those relationships and predict the total trip price as accurately as possible.
+
+### What I did
+1. **Loaded the dataset** (trip distance, time of day, day of week, passengers, traffic, weather, fares, duration, and price) from Azure Blob Storage into a Fabric notebook.
+2. **EDA** — explored how each feature related to price and checked for outliers and data quality issues.
+3. **Prepared the data** — handled categorical features (time of day, traffic, weather) and split into training and test sets.
+4. **Built and compared models:**
+   - Multiple Linear Regression (baseline)
+   - Random Forest Regressor
+5. **Evaluated** both models using RMSE (Root Mean Squared Error) to measure prediction accuracy, tracked in MLflow.
+
+### Outcome
+- Built two working price-prediction models and compared them with RMSE.
+- Showed how a Random Forest can capture non-linear patterns that a linear model misses.
+- Clear, repeatable workflow from raw data to evaluated model.
+
+### Tools
+Microsoft Fabric · Python · pandas · scikit-learn · Matplotlib / Seaborn · MLflow · Azure Blob Storage
+
+### Skills demonstrated
+- Regression modelling and model comparison
+- Exploratory Data Analysis and feature preparation
+- Model evaluation with RMSE
+- Experiment tracking with MLflow
+- End-to-end ML workflow in Microsoft Fabric
+
+---
+
+## Also covered in this work
+- **Exploratory Data Analysis** with pandas, Matplotlib, and Seaborn (sales and coffee-store case studies)
+- **Time Series Forecasting** and **K-Means Clustering** (predictive modelling)
+- **PySpark** and **data engineering** basics in Microsoft Fabric
+- Data loading from **Azure Blob Storage** and **OneLake**
+
+---
+
+### Skills summary (across all ML work)
+Python · pandas · scikit-learn · Machine Learning (Regression, Classification, Clustering) · Time Series Forecasting · Exploratory Data Analysis (EDA) · MLflow · PySpark · Microsoft Fabric · Azure Blob Storage · Data cleaning & preparation
+
+
+
+
