@@ -82,7 +82,7 @@ repeatable task rather than a rebuild.
 ## Outcomes
 
 - Multiple surveys converted into interactive dashboards using the same reusable pipeline.
-- Participation, gender and ethnicity figures matched the source reports on cross-check.
+- Participation, gender and ethnicity figures matched the source reports on cross-check. Age was standardised into consistent bands; where an individual report used different bands, this was documented as a known difference.
 - Fully anonymised, privacy-safe presentation of youth voices.
 - Adding a new survey became a short, repeatable task instead of a full rebuild.
 
