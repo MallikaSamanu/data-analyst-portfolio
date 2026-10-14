@@ -1,5 +1,4 @@
 # Interactive Insights Automation (Looker Studio + AI-assisted cleaning)
-![Buzzly dashboard](dashboard.png)
 
 End-to-end automation that turns raw youth-survey exports and their insight reports into
 interactive, web-embeddable **Google Looker Studio** dashboards. Data cleaning is
